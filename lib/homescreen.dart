@@ -35,15 +35,13 @@ class _HomeScreenState extends State<HomeScreen> {
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: index,
             onTap: (value) {
-
               setState(() {
                 index = value;
               });
             },
-            items:const [
-
-           BottomNavigationBarItem(
-                backgroundColor:Themes.primary,
+            items: const [
+              BottomNavigationBarItem(
+                  backgroundColor:Themes.primary,
                   icon:  ImageIcon(
                     AssetImage("assets/images/radio.png"),
                   ),
