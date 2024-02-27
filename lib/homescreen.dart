@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islamiapp/tabs/ahadeth.dart';
 import 'package:islamiapp/tabs/quran.dart';
 import 'package:islamiapp/tabs/radio.dart';
 import 'package:islamiapp/tabs/sebha.dart';
 import 'package:islamiapp/tabs/settings.dart';
 import 'package:islamiapp/themes.dart';
-
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home';
 
@@ -29,9 +29,9 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: Colors.transparent,
           appBar: AppBar(
               title: Text(
-                'Islami',
-                style: Theme.of(context).textTheme.bodyLarge,
-              )),
+                AppLocalizations.of(context)!.appTitle,
+            style: Theme.of(context).textTheme.bodyLarge,
+          )),
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: index,
             onTap: (value) {

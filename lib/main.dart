@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islamiapp/hadith_Details/hadithDetails.dart';
 import 'package:islamiapp/homescreen.dart';
 import 'package:islamiapp/provider/my_provider.dart';
 import 'package:islamiapp/surahdetails/surah_details.dart';
 import 'package:islamiapp/themes.dart';
 import 'package:provider/provider.dart';
-
 void main() {
   runApp(ChangeNotifierProvider(
       create: (context) => MyProvider(), child: MyApp()));
@@ -19,7 +19,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     var provider = Provider.of<MyProvider>(context);
     return MaterialApp(
-      locale: Locale("en"),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: Locale("ar"),
       //  title: 'Flutter Demo',
       routes: {
         HomeScreen.routeName: (context) => HomeScreen(),

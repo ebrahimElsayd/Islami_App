@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islamiapp/hadith_Details/hadithDetails.dart';
 import 'package:islamiapp/hadith_model.dart';
 import 'package:islamiapp/themes.dart';
-
 class AhadethTab extends StatefulWidget {
   @override
   State<AhadethTab> createState() => _AhadethTabState();
@@ -30,7 +30,7 @@ class _AhadethTabState extends State<AhadethTab> {
           thickness: 3,
           color: Themes.primary,
         ),
-        Text("الأحاديث",
+        Text(AppLocalizations.of(context)!.alhadith,
             style:
                 Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 30)),
         const Divider(
