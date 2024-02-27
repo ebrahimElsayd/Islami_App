@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:islamiapp/tabs/ahadeth.dart';
 import 'package:islamiapp/tabs/quran.dart';
 import 'package:islamiapp/tabs/radio.dart';
 import 'package:islamiapp/tabs/sebha.dart';
+import 'package:islamiapp/tabs/settings.dart';
 import 'package:islamiapp/themes.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -47,23 +47,29 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   label: "radio"),
               BottomNavigationBarItem(
-                  backgroundColor:Themes.primary,
+                  backgroundColor: Themes.primary,
                   icon: ImageIcon(
                     AssetImage("assets/images/sebha.png"),
                   ),
                   label: "sebha"),
               BottomNavigationBarItem(
-                  backgroundColor:Themes.primary,
+                  backgroundColor: Themes.primary,
                   icon: ImageIcon(
                     AssetImage("assets/images/qurann.png"),
                   ),
-                  label: "quran2"),
+                  label: "Ahadeth"),
               BottomNavigationBarItem(
-                  backgroundColor:Themes.primary,
-                  icon:   ImageIcon(
+                  backgroundColor: Themes.primary,
+                  icon: ImageIcon(
                     AssetImage("assets/images/quran.png"),
                   ),
-                  label: "quran")
+                  label: "quran"),
+              BottomNavigationBarItem(
+                  backgroundColor: Themes.primary,
+                  icon: Icon(
+                    Icons.settings,
+                  ),
+                  label: "Settings")
             ],
           ),
           body: tabs[index],
@@ -73,14 +79,11 @@ class _HomeScreenState extends State<HomeScreen> {
     );
 
   }
-  List<Widget>tabs=[
+  List<Widget>tabs= [
     RadioTab(),
     SebhaTab(),
     AhadethTab(),
-    QuranTab()
-
-
-
-
+    QuranTab(),
+    SettingsTab()
   ];
 }

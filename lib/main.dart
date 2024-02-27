@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:islamiapp/hadith_Details/hadithDetails.dart';
 import 'package:islamiapp/homescreen.dart';
+import 'package:islamiapp/provider/my_provider.dart';
 import 'package:islamiapp/surahdetails/surah_details.dart';
 import 'package:islamiapp/themes.dart';
-
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => MyProvider(), child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +17,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
     return MaterialApp(
+      locale: Locale("en"),
       //  title: 'Flutter Demo',
       routes: {
         HomeScreen.routeName: (context) => HomeScreen(),
